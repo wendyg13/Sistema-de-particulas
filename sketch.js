@@ -6,11 +6,11 @@ function setup() {
 }
 
 function draw() {
-	background(110, 50, 190, 20);
+	background(138, 0, 196, 20);
 
 	for (let i = 0; i < sp.length - 1; i++) {
 		noFill();
-		stroke(100, 210, 10, 20);
+		stroke(255, 250, 250, 20);
 		line(sp[i].pos.x, sp[i].pos.y, sp[i + 1].pos.x, sp[i + 1].pos.y);
 	}
 
@@ -31,6 +31,7 @@ function draw() {
 function mouseClicked() {
 	let np = new Particula(mouseX, mouseY);
 	sp.push(np);
+
 
 	console.log('n Partículas: ' + sp.length);
 }

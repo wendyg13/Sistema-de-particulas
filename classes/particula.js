@@ -8,12 +8,12 @@ class Particula {
 		this.tVida = int(random(100, 300));
 		this.tVidaInicial = this.tVida;
 		this.estaMuerta = false;
-		this.diam = random(10, 50);
-		this.gravedad = createVector(0, 1);
+		this.diam = random(20, 30);
+		this.forma = random(0,1) > 0.5 ? 'circle' : 'square';
 
     this.velAngular = random(0.01, 0.5);
 
-		this.c = color(random(220, 255), random(80, 150), random(200, 255));
+		this.c = color(random(150, 255), random(80, 150), random(200, 255));
 	  console.log("Estoy viva");
   }
 
@@ -23,7 +23,7 @@ class Particula {
 			this.vel.setMag(6);
 			this.tVida -= 1;
 			this.pos.add(this.vel);
-      this.vel.rotate(this.velAngular);
+     		this.vel.rotate(this.velAngular);
 		}
 
 		if (this.tVida <= 0 && !this.estaMuerta) {
@@ -35,8 +35,12 @@ class Particula {
 		fill(this.c);
 		noStroke();
 
-		this.diamFinal = map(this.tVida, this.tVidaInicial, 0, this.diam, 0);
-
-		circle(this.pos.x, this.pos.y, this.diamFinal);
+		this.diamFinal = map(this.tVida, this.tVidaInicial, 0, 0, this.diam, 0);
+		if (this.forma === 'circle') {
+			ellipse(this.pos.x, this.pos.y, this.diamFinal);
+		}
+		else { 
+		square(this.pos.x, this.pos.y, this.diamFinal);
+		} 
 	}
 }
