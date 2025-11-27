@@ -11,10 +11,11 @@ class Particula {
 		this.diam = random(20, 30);
 		this.forma = random(0,1) > 0.5 ? 'circle' : 'square';
 
-    this.velAngular = random(0.01, 0.5);
+   		this.velAngular = random(0.01, 0.5);
 
 		this.c = color(random(150, 255), random(80, 150), random(200, 255));
-	  console.log("Estoy viva");
+	  
+		console.log("Estoy viva");
   }
 
 	update() {
@@ -39,8 +40,10 @@ class Particula {
 		if (this.forma === 'circle') {
 			ellipse(this.pos.x, this.pos.y, this.diamFinal);
 		}
+		
 		else { 
 		square(this.pos.x, this.pos.y, this.diamFinal);
+
 		} 
 	}
 }
