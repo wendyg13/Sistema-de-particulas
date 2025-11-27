@@ -30,7 +30,7 @@ function draw() {
 
 function mouseClicked() {
 	for (let p of sp) {
-	p.c = color(random(100, 255), random(50, 100), random(120, 155));
+	p.c = color(random(120, 155), random(100, 180), random(120, 250));
 }
 
 	let np = new Particula(mouseX, mouseY);
